@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Ninh Quế Anh | Portfolio</title>
+
+<!-- FONT -->
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+<!-- ICON -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+<style>
+
+/* RESET */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Nunito',sans-serif;
+    background:
+    linear-gradient(180deg,#ffeaf3,#fff7fa);
+
+    color:#5d4b55;
+    overflow-x:hidden;
+}
+
+/* BACKGROUND */
+
+body::before{
+    content:'';
+    position:fixed;
+    inset:0;
+
+    background:
+    radial-gradient(circle at top left,
+    rgba(255,105,180,0.18),
+    transparent 30%),
+
+    radial-gradient(circle at bottom right,
+    rgba(255,182,193,0.25),
+    transparent 30%);
+
+    z-index:-2;
+}
+
+/* HEADER */
+
+header{
+    width:92%;
+    margin:auto;
+    margin-top:25px;
+
+    padding:22px 40px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    border-radius:30px;
+
+    background:rgba(255,255,255,0.75);
+
+    backdrop-filter:blur(12px);
+
+    border:1px solid #ffd2e2;
+
+    box-shadow:
+    0 10px 30px rgba(255,105,180,0.08);
+
+    position:sticky;
+    top:15px;
+    z-index:999;
+}
+
+.logo{
+    font-size:30px;
+    font-weight:800;
+    color:#ff5fa2;
+}
+
+nav{
+    display:flex;
+    gap:35px;
+}
+
+nav a{
+    text-decoration:none;
+    color:#8d6577;
+    font-weight:700;
+    transition:0.3s;
+    position:relative;
+}
+
+nav a:hover{
+    color:#ff5fa2;
+}
+
+nav a::after{
+    content:'';
+    position:absolute;
+    left:0;
+    bottom:-8px;
+
+    width:0%;
+    height:3px;
+
+    background:#ff5fa2;
+
+    transition:0.3s;
+    border-radius:10px;
+}
+
+nav a:hover::after{
+    width:100%;
+}
+
+.contact-btn{
+    background:linear-gradient(to right,#ff77b7,#ff4d94);
+
+    color:white;
+
+    padding:14px 26px;
+
+    border-radius:18px;
+
+    text-decoration:none;
+
+    font-weight:700;
+
+    transition:0.3s;
+}
+
+.contact-btn:hover{
+    transform:translateY(-3px);
+    box-shadow:
+    0 10px 25px rgba(255,105,180,0.25);
+}
+
+/* HERO */
+
+.hero{
+    width:92%;
+    margin:70px auto;
+
+    display:grid;
+    grid-template-columns:1fr 1fr;
+
+    gap:60px;
+    align-items:center;
+}
+
+.tag{
+    display:inline-block;
+
+    background:#ffe1ee;
+
+    color:#ff5fa2;
+
+    padding:10px 22px;
+
+    border-radius:30px;
+
+    font-weight:800;
+
+    margin-bottom:25px;
+}
+
+.hero h1{
+    font-size:92px;
+    line-height:1;
+
+    color:#ff5fa2;
+
+    text-shadow:
+    0 4px 0 #fff,
+    0 0 20px rgba(255,105,180,0.35);
+
+    margin-bottom:25px;
+}
+
+.hero h2{
+    font-size:42px;
+    color:#8c6676;
+    margin-bottom:25px;
+}
+
+.hero p{
+    font-size:22px;
+    line-height:1.8;
+
+    color:#7f6a74;
+
+    margin-bottom:35px;
+}
+
+/* INFO */
+
+.info-box{
+    display:flex;
+    gap:18px;
+    flex-wrap:wrap;
+
+    margin-bottom:35px;
+}
+
+.info-card{
+    width:180px;
+    height:145px;
+
+    background:rgba(255,255,255,0.72);
+
+    border:1.5px solid #ffc3d7;
+
+    border-radius:28px;
+
+    padding:18px;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+
+    box-shadow:
+    0 8px 22px rgba(255,105,180,0.12);
+
+    transition:0.35s;
+}
+
+.info-card:hover{
+    transform:translateY(-6px);
+}
+
+.info-card i{
+    font-size:34px;
+    color:#ff5fa2;
+    margin-bottom:12px;
+}
+
+.info-card b{
+    font-size:16px;
+    color:#ff4f93;
+    margin-bottom:6px;
+}
+
+.info-card span{
+    font-size:15px;
+    color:#7b5b68;
+}
+
+/* BUTTON */
+
+.buttons{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    text-decoration:none;
+
+    padding:18px 32px;
+
+    border-radius:18px;
+
+    font-weight:800;
+
+    transition:0.3s;
+}
+
+.primary{
+    background:linear-gradient(to right,#ff77b7,#ff4d94);
+    color:white;
+}
+
+.primary:hover{
+    transform:translateY(-5px);
+    box-shadow:
+    0 10px 25px rgba(255,105,180,0.25);
+}
+
+.secondary{
+    border:2px solid #ff6aa8;
+    color:#ff5fa2;
+    background:white;
+}
+
+.secondary:hover{
+    background:#ff5fa2;
+    color:white;
+}
+
+/* RIGHT */
+
+.hero-right{
+    display:flex;
+    justify-content:center;
+}
+
+.circle{
+    width:520px;
+    height:520px;
+
+    border-radius:50%;
+
+    background:
+    linear-gradient(180deg,#ffd6e8,#fff);
+
+    border:8px solid #ffd1e4;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    box-shadow:
+    0 0 50px rgba(255,105,180,0.2);
+}
+
+.circle i{
+    font-size:180px;
+    color:#ff85b9;
+}
+.circle img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    border-radius:50%;
+}
+/* SECTION */
+
+.section{
+    width:92%;
+    margin:80px auto;
+}
+
+.section-title{
+    font-size:42px;
+    color:#ff5fa2;
+    margin-bottom:35px;
+}
+
+/* ABOUT */
+
+.about-box{
+    background:rgba(255,255,255,0.7);
+
+    border:1px solid #ffd2e2;
+
+    border-radius:30px;
+
+    padding:45px;
+
+    line-height:2;
+
+    font-size:20px;
+
+    box-shadow:
+    0 10px 25px rgba(255,105,180,0.08);
+}
+
+/* PROJECT */
+
+.project-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:28px;
+}
+
+.project-card{
+    background:rgba(255,255,255,0.75);
+
+    border:1px solid #ffd2e2;
+
+    border-radius:28px;
+
+    padding:35px;
+
+    transition:0.3s;
+
+    text-align:center;
+
+    box-shadow:
+    0 10px 25px rgba(255,105,180,0.08);
+}
+
+.project-card:hover{
+    transform:translateY(-8px);
+}
+
+.project-card i{
+    font-size:55px;
+    color:#ff5fa2;
+    margin-bottom:20px;
+}
+
+.project-card h3{
+    font-size:32px;
+    margin-bottom:15px;
+}
+
+.project-card p{
+    margin-bottom:25px;
+    line-height:1.7;
+}
+
+.project-card a{
+    text-decoration:none;
+}
+
+.project-card button{
+    width:100%;
+
+    border:none;
+
+    padding:15px;
+
+    border-radius:16px;
+
+    background:linear-gradient(to right,#ff77b7,#ff4d94);
+
+    color:white;
+
+    font-size:16px;
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:0.3s;
+}
+
+.project-card button:hover{
+    transform:scale(1.03);
+}
+
+/* BOTTOM */
+
+.bottom-grid{
+    width:92%;
+    margin:80px auto;
+
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:30px;
+}
+
+.skill-box,
+.summary-box{
+    background:rgba(255,255,255,0.75);
+
+    border:1px solid #ffd2e2;
+
+    border-radius:30px;
+
+    padding:40px;
+}
+
+/* SKILL */
+
+.skill{
+    margin-bottom:24px;
+}
+
+.skill p{
+    margin-bottom:10px;
+    font-weight:700;
+}
+
+.bar{
+    width:100%;
+    height:12px;
+
+    background:#ffe5ef;
+
+    border-radius:20px;
+}
+
+.bar span{
+    display:block;
+    height:100%;
+
+    border-radius:20px;
+
+    background:
+    linear-gradient(to right,#ff8ec2,#ff4d94);
+}
+
+/* SUMMARY */
+
+.summary-box p{
+    line-height:2;
+    margin-bottom:20px;
+}
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+}
+
+.stat{
+    background:#fff5f9;
+
+    border:1px solid #ffd5e5;
+
+    border-radius:24px;
+
+    padding:28px 15px;
+
+    text-align:center;
+}
+
+.stat h3{
+    color:#ff5fa2;
+    font-size:38px;
+    margin-bottom:10px;
+}
+
+/* FOOTER */
+
+footer{
+    text-align:center;
+    padding:40px;
+    color:#9b7484;
+    font-weight:700;
+}
+
+/* MOBILE */
+
+@media(max-width:1100px){
+
+    .hero{
+        grid-template-columns:1fr;
+    }
+
+    .bottom-grid{
+        grid-template-columns:1fr;
+    }
+
+    .project-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+}
+
+@media(max-width:700px){
+
+    .hero h1{
+        font-size:60px;
+    }
+
+    .hero h2{
+        font-size:28px;
+    }
+
+    .project-grid{
+        grid-template-columns:1fr;
+    }
+
+    .stats{
+        grid-template-columns:1fr 1fr;
+    }
+
+    header{
+        flex-direction:column;
+        gap:20px;
+    }
+
+    nav{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .circle{
+        width:320px;
+        height:320px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+
+    <div class="logo">
+        QUẾ ANH
+    </div>
+
+    <nav>
+        <a href="#home">Trang chủ</a>
+        <a href="#about">Giới thiệu</a>
+        <a href="#projects">Dự án</a>
+        <a href="#skills">Kỹ năng</a>
+        <a href="#summary">Tổng kết</a>
+    </nav>
+</header>
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+    <div>
+
+        <span class="tag">
+            HELLO, I'M
+        </span>
+
+        <h1>
+            Ninh Quế Anh
+        </h1>
+
+        <h2>
+            Sinh viên Đại Học Công nghệ
+        </h2>
+
+        <p>
+            Portfolio cá nhân tổng hợp các bài tập,
+            dự án và kỹ năng được học trong môn
+            "Nhập môn Công nghệ số và Ứng dụng AI".
+        </p>
+
+        <div class="info-box">
+
+            <div class="info-card">
+                <i class="fa-solid fa-user"></i>
+                <b>MSV</b>
+                <span>25023152</span>
+            </div>
+
+            <div class="info-card">
+                <i class="fa-solid fa-building-columns"></i>
+                <b>Lớp</b>
+                <span>K70I-IS5</span>
+            </div>
+
+            <div class="info-card">
+                <i class="fa-solid fa-school"></i>
+                <b>Trường</b>
+                <span>ĐH Công nghệ</span>
+            </div>
+
+        </div>
+
+        <div class="buttons">
+
+            <a href="#projects" class="btn primary">
+                Xem dự án của tôi
+            </a>
+
+            <a href="#about" class="btn secondary">
+                Tìm hiểu thêm
+            </a>
+
+        </div>
+
+    </div>
+
+    <div class="hero-right">
+
+        <div class="circle">
+            <img src="images/avatar.jpg" alt="avatar">
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section class="section" id="about">
+
+    <div class="section-title">
+        Giới thiệu
+    </div>
+
+    <div class="about-box">
+
+        Xin chào! Mình là Ninh Quế Anh,
+        sinh viên lớp K70I-IS5 tại Đại học Công nghệ.
+
+        <br><br>
+
+        Mình yêu thích công nghệ, thiết kế web,
+        trí tuệ nhân tạo và sáng tạo nội dung số.
+
+        <br><br>
+
+        Portfolio này được xây dựng nhằm tổng hợp
+        các bài tập, kỹ năng và dự án đã thực hiện
+        trong môn học "Nhập môn Công nghệ số và Ứng dụng AI".
+
+    </div>
+
+</section>
+
+<!-- PROJECT -->
+
+<section class="section" id="projects">
+
+    <div class="section-title">
+        Dự án & Bài tập
+    </div>
+
+    <div class="project-grid">
+
+        <div class="project-card">
+            <i class="fa-solid fa-folder"></i>
+            <h3>Bài 1</h3>
+            <p>Quản lý tệp và thư mục</p>
+
+            <a href="pdf/bai1.pdf" target="_blank">
+                <button>Xem chi tiết</button>
+            </a>
+        </div>
+
+        <div class="project-card">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <h3>Bài 2</h3>
+            <p>Tìm kiếm và đánh giá thông tin</p>
+
+            <a href="pdf/bai2.pdf" target="_blank">
+                <button>Xem chi tiết</button>
+            </a>
+        </div>
+
+        <div class="project-card">
+            <i class="fa-solid fa-robot"></i>
+            <h3>Bài 3</h3>
+            <p>Viết Prompt hiệu quả</p>
+
+            <a href="pdf/bai3.pdf" target="_blank">
+                <button>Xem chi tiết</button>
+            </a>
+        </div>
+
+        <div class="project-card">
+            <i class="fa-solid fa-users"></i>
+            <h3>Bài 4</h3>
+            <p>Hợp tác trực tuyến</p>
+
+            <a href="pdf/bai4.pdf" target="_blank">
+                <button>Xem chi tiết</button>
+            </a>
+        </div>
+
+        <div class="project-card">
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
+            <h3>Bài 5</h3>
+            <p>Sáng tạo nội dung với AI</p>
+
+            <a href="pdf/bai5.pdf" target="_blank">
+                <button>Xem chi tiết</button>
+            </a>
+        </div>
+
+        <div class="project-card">
+            <i class="fa-solid fa-shield-halved"></i>
+            <h3>Bài 6</h3>
+            <p>AI có trách nhiệm</p>
+
+            <a href="pdf/bai6.pdf" target="_blank">
+                <button>Xem chi tiết</button>
+            </a>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- BOTTOM -->
+
+<section class="bottom-grid">
+
+    <!-- SKILLS -->
+
+    <div class="skill-box" id="skills">
+
+        <div class="section-title">
+            Kỹ năng
+        </div>
+
+        <div class="skill">
+            <p>Quản lý dữ liệu</p>
+            <div class="bar">
+                <span style="width:90%"></span>
+            </div>
+        </div>
+
+        <div class="skill">
+            <p>Tìm kiếm thông tin</p>
+            <div class="bar">
+                <span style="width:88%"></span>
+            </div>
+        </div>
+
+        <div class="skill">
+            <p>Viết Prompt AI</p>
+            <div class="bar">
+                <span style="width:95%"></span>
+            </div>
+        </div>
+
+        <div class="skill">
+            <p>Làm việc nhóm</p>
+            <div class="bar">
+                <span style="width:85%"></span>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- SUMMARY -->
+
+    <div class="summary-box" id="summary">
+
+        <div class="section-title">
+            Tổng kết
+        </div>
+
+        <p>
+            Trong quá trình học tập và thực hiện bài tập,
+            mình đã học được nhiều kỹ năng về công nghệ số,
+            AI và khả năng ứng dụng thực tế.
+        </p>
+
+        <div class="stats">
+
+            <div class="stat">
+                <h3>6+</h3>
+                <span>Bài tập</span>
+            </div>
+
+            <div class="stat">
+                <h3>1000+</h3>
+                <span>Phút học</span>
+            </div>
+
+            <div class="stat">
+                <h3>AI</h3>
+                <span>Ứng dụng</span>
+            </div>
+
+            <div class="stat">
+                <h3>∞</h3>
+                <span>Kỹ năng</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer id="footer">
+
+    © 2026 Ninh Quế Anh - Portfolio Project
+
+</footer>
+
+</body>
+</html>
